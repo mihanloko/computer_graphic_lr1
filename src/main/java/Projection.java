@@ -1,3 +1,5 @@
+import Picture.Edge;
+
 public class Projection {
     private double f = 0.5;
     private double alpha = 0.785398;

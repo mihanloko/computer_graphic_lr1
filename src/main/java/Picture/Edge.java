@@ -1,3 +1,5 @@
+package Picture;
+
 public class Edge {
     private Point a, b;
 

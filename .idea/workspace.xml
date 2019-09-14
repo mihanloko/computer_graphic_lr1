@@ -2,33 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c7f8e94-e6c0-479e-8371-cacfe8e6246c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lr1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Edge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/KeyInputHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Mods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Picture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Projection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Transformer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/todolist.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Edge.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/KeyInputHandler$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/KeyInputHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/lr1.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Mods.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Picture.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Point.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Projection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Transformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Dilation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Reflection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Rotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Transformer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Translation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KeyInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KeyInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Mods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transformer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/todolist.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Edge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/KeyInputHandler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/KeyInputHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KeyInputHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/lr1.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Mods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Picture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Projection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Transformer.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +38,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -112,7 +112,8 @@
       <workItem from="1568260910825" duration="1051000" />
       <workItem from="1568296988300" duration="7089000" />
       <workItem from="1568383128373" duration="1565000" />
-      <workItem from="1568427313791" duration="108000" />
+      <workItem from="1568427313791" duration="1681000" />
+      <workItem from="1568438641763" duration="2111000" />
     </task>
     <servers />
   </component>
@@ -124,7 +125,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -1,3 +1,5 @@
+package Picture;
+
 import java.util.Arrays;
 
 public class Point {
@@ -30,7 +32,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point{" +
+        return "Picture.Point{" +
                 "coordinates=" + Arrays.toString(coordinates) +
                 '}';
     }

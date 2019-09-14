@@ -1,16 +1,14 @@
+import Picture.Edge;
+import Picture.Picture;
+import Picture.Point;
+
+import Transformers.*;
+
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferStrategy;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Main extends Canvas implements Runnable {
@@ -21,17 +19,22 @@ public class Main extends Canvas implements Runnable {
     private static final int SCREEN_WIDTH = 800;
     private static final int SCREEN_HEIGHT = 600;
 
-    private Mods mod = Mods.Translation;
+    private Transformer currentTransformer;
 
     //переменные
     private LinkedList<Point> allPoints = new LinkedList<>();
     private Picture picture = new Picture();
     private Projection projection = new Projection();
+    private ArrayList<Transformer> mods;
+    private boolean isAPressed = false;
+    private boolean isSPressed = false;
+    private boolean isDPressed = false;
+    private boolean isQPressed = false;
+    private boolean isWPressed = false;
+    private boolean isEPressed = false;
 
-    private double magic = 0.0628319;
-    private int delay = 10 * 2;
+    private final int delay = 20;
 
-    private double x = 200, y = 200;
 
     //старт игры
     private void start() {
@@ -60,6 +63,13 @@ public class Main extends Canvas implements Runnable {
 
     //иницализация
     private void init() {
+        mods = new ArrayList<>(5);
+        mods.add(new Translation());
+        mods.add(new Dilation());
+        mods.add(new Rotation());
+        mods.add(new Reflection());
+        currentTransformer = mods.get(0);
+
         addKeyListener(new KeyInputHandler(this));
 
         //todo нормальное составить изображение
@@ -109,7 +119,7 @@ public class Main extends Canvas implements Runnable {
 
         g2d.setStroke(new BasicStroke(4, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
-        for (Edge edge: picture.getEdges()) {
+        for (Edge edge : picture.getEdges()) {
             drawEdge(projection.projectionOfEdge(edge), g2d);
         }
 
@@ -117,14 +127,13 @@ public class Main extends Canvas implements Runnable {
         g.dispose();
         bs.show();
 
-
     }
 
     private void drawEdge(Edge edge, Graphics2D graphics2D) {
-        int ax = (int)edge.getA().getCoordinates()[0],
-                ay = (int)edge.getA().getCoordinates()[1],
-                bx = (int)edge.getB().getCoordinates()[0],
-                by = (int)edge.getB().getCoordinates()[1];
+        int ax = (int) edge.getA().getCoordinates()[0],
+                ay = (int) edge.getA().getCoordinates()[1],
+                bx = (int) edge.getB().getCoordinates()[0],
+                by = (int) edge.getB().getCoordinates()[1];
         int middleX = getWidth() / 2;
         int middleY = getHeight() / 2;
         /*System.out.println(
@@ -141,23 +150,31 @@ public class Main extends Canvas implements Runnable {
 
     //обновление дистанции и ускорения
     private void update() {
-        switch (mod) {
-            case Dilation: {
 
-            }
-            case Rotation: {
-
-            }
-            case Reflection: {
-
-            }
-            case Translation: {
-
-            }
-        }
     }
 
+    public void setMod(int mod) {
+        currentTransformer = mods.get(mod);
+    }
 
+    public void setAPressed(boolean flag) {
+        isAPressed = flag;
+    }
+    public void setSPressed(boolean flag) {
+        isSPressed = flag;
+    }
+    public void setDPressed(boolean flag) {
+        isDPressed = flag;
+    }
+    public void setQPressed(boolean flag) {
+        isQPressed = flag;
+    }
+    public void setWPressed(boolean flag) {
+        isWPressed = flag;
+    }
+    public void setEPressed(boolean flag) {
+        isEPressed = flag;
+    }
 
     public static void main(String[] args) {
         Main game = new Main();
@@ -173,85 +190,5 @@ public class Main extends Canvas implements Runnable {
         game.start();
     }
 
-    //обработка событий мыши
-//    private class MouseInputListener extends MouseAdapter {
-//        @Override
-//        public void mouseClicked(MouseEvent e) {
-//            if (menu) {
-//                if (e.getY() <= 200 + image.getHeight(null) && e.getY() >= 200) {
-//                    if (e.getX() <= 250 && e.getX() >= 150) {
-//                        menu = !menu;
-//                        mod = new StandardMode();
-//                        myDistance = 0;
-//                        enemyDistance = 0;
-//                        myCar.increaseY(-myCar.getY() + HEIGHT - myCar.getHeight());
-//                        leftPressed = rightPressed = upPressed = false;
-//                        boost = 0;
-//                    } else if (e.getX() >= 250 && e.getX() <= 350) {
-//                        menu = !menu;
-//                        mod = new SpecialMode();
-//                        myDistance = 0;
-//                        enemyDistance = 0;
-//                        myCar.increaseY(-myCar.getY() + 400);
-//                        leftPressed = rightPressed = upPressed = false;
-//                        boost = 0;
-//                    } else if (e.getX() >= 350 && e.getX() <= 450) {
-//                        mod = new RiderMode();
-//                        menu = !menu;
-//                        myDistance = 0;
-//                        enemyDistance = 0;
-//                        myCar.increaseY(-myCar.getY() + 400);
-//                        leftPressed = rightPressed = upPressed = false;
-//                        boost = 0;
-//                    } else if (e.getX() >= 450 && e.getX() <= 550) {
-//                        mod = new NightMode();
-//                        menu = !menu;
-//                        myDistance = 0;
-//                        enemyDistance = 0;
-//                        myCar.increaseY(-myCar.getY() + HEIGHT - myCar.getHeight() + 10);
-//                        leftPressed = rightPressed = upPressed = false;
-//                        boost = 0;
-//                        Night = true;
-//                    } else if (e.getX() >= 550 && e.getX() <= 650) {
-//                        mod = new IceMode();
-//                        menu = !menu;
-//                        myDistance = 0;
-//                        enemyDistance = 0;
-//                        myCar.increaseY(-myCar.getY() + 400);
-//                        leftPressed = rightPressed = upPressed = false;
-//                        boost = 0;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//
-//    //обработка событий клавиатуры
-//    private class KeyInputHandler extends KeyAdapter {
-//        public void keyPressed(KeyEvent e) {
-//            if (!menu) {
-//                if (e.getKeyCode() == KeyEvent.VK_LEFT)
-//                    leftPressed = true;
-//                if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-//                    rightPressed = true;
-//                if (e.getKeyCode() == KeyEvent.VK_UP) {
-//                    upPressed = true;
-//                    startOfBoost = System.currentTimeMillis();
-//                }
-//            }
-//        }
-//
-//        public void keyReleased(KeyEvent e) {
-//            if (!menu) {
-//                if (e.getKeyCode() == KeyEvent.VK_LEFT)
-//                    leftPressed = false;
-//                if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-//                    rightPressed = false;
-//                if (e.getKeyCode() == KeyEvent.VK_UP) {
-//                    upPressed = false;
-//                    startOfBoost = System.currentTimeMillis();
-//                }
-//            }
-//        }
-//    }
+
 }
