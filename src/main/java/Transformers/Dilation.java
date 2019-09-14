@@ -15,7 +15,7 @@ public class Dilation implements Transformer {
                 {0, 1, 0, 0},
                 {0, 0, 1, 0},
                 {0, 0, 0, 1}
-        };;
+        };
         switch (direction) {
             case OXPlus:
                 matrix[0][0] = factorPlus;
@@ -36,6 +36,19 @@ public class Dilation implements Transformer {
                 matrix[2][2] = factorMinus;
                 break;
         }
+
+        for (Point point: points) {
+            point.changeCoordinates(matrix);
+        }
+    }
+
+    void customDilation(LinkedList<Point> points, double factor) {
+        double[][] matrix = {
+                {factor, 0, 0 , 0},
+                {0, factor, 0, 0},
+                {0, 0, 1, 0},
+                {0, 0, 0, 1}
+        };
 
         for (Point point: points) {
             point.changeCoordinates(matrix);

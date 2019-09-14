@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c7f8e94-e6c0-479e-8371-cacfe8e6246c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Directions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Custom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lr1.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/KeyInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KeyInputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Mods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Picture/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Picture/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Dilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Dilation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Reflection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Reflection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Rotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Transformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Transformer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Translation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Translation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/KeyInputHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KeyInputHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
@@ -29,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -106,8 +102,16 @@
       <workItem from="1568383128373" duration="1565000" />
       <workItem from="1568427313791" duration="1681000" />
       <workItem from="1568438641763" duration="2111000" />
-      <workItem from="1568452773807" duration="4117000" />
+      <workItem from="1568452773807" duration="11545000" />
     </task>
+    <task id="LOCAL-00001" summary="все кроме задания по варианту и сложной фигуры">
+      <created>1568457640172</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568457640172</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,5 +129,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="все кроме задания по варианту и сложной фигуры" />
+    <option name="LAST_COMMIT_MESSAGE" value="все кроме задания по варианту и сложной фигуры" />
   </component>
 </project>

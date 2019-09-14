@@ -37,6 +37,8 @@ public class Main extends Canvas implements Runnable {
     private int lengthOfAxis = 400;
 
     private final int delay = 20;
+    private int x = 100, y = 100;
+    private double factor = 1.05;
 
 
     //старт игры
@@ -56,10 +58,27 @@ public class Main extends Canvas implements Runnable {
         while (running) {
             delta = System.currentTimeMillis() - lastTime;
             if (delta >= delay) {
-                lastTime = System.currentTimeMillis();
-                render();
-                update();
+                if (currentTransformer instanceof Custom) {
 
+                    ((Custom) currentTransformer).setup(factor, x, y);
+                    for (int i = 0; i < 10; i++) {
+                        currentTransformer.transform(allPoints, Directions.OZPlus);
+                        render();
+                        waiting();
+                    }
+                    ((Custom) currentTransformer).setup(1.0 / factor, x, y);
+                    for (int i = 0; i < 10; i++) {
+                        currentTransformer.transform(allPoints, Directions.OZPlus);
+                        render();
+                        waiting();
+                    }
+                    currentTransformer = mods.get(Mods.Translation.getNum());
+                }
+                else {
+                    lastTime = System.currentTimeMillis();
+                    render();
+                    update();
+                }
             }
         }
     }
@@ -71,6 +90,7 @@ public class Main extends Canvas implements Runnable {
         mods.add(new Dilation());
         mods.add(new Rotation());
         mods.add(new Reflection());
+        mods.add(new Custom());
         currentTransformer = mods.get(Mods.Translation.getNum());
 
         OX = new Edge(new Point(0, 0, 0), new Point(lengthOfAxis, 0, 0));
@@ -79,32 +99,49 @@ public class Main extends Canvas implements Runnable {
 
         addKeyListener(new KeyInputHandler(this));
 
-        //todo нормальное составить изображение
+
         allPoints.add(new Point(0, 0, 0));
         allPoints.add(new Point(0, 200, 0));
+        allPoints.add(new Point(40, 200, 0));
+        allPoints.add(new Point(100, 100, 0));
+        allPoints.add(new Point(160, 200, 0));
         allPoints.add(new Point(200, 200, 0));
         allPoints.add(new Point(200, 0, 0));
-        allPoints.add(new Point(0, 0, 200));
-        allPoints.add(new Point(0, 200, 200));
-        allPoints.add(new Point(200, 200, 200));
-        allPoints.add(new Point(200, 0, 200));
+        allPoints.add(new Point(180, 0, 0));
+        allPoints.add(new Point(180, 180, 0));
+        allPoints.add(new Point(160, 180, 0));
+        allPoints.add(new Point(110, 80, 0));
+        allPoints.add(new Point(90, 80, 0));
+        allPoints.add(new Point(40, 180, 0));
+        allPoints.add(new Point(20, 180, 0));
+        allPoints.add(new Point(20, 0, 0));
 
-        picture.addEdge(allPoints.get(0), allPoints.get(1));
-        picture.addEdge(allPoints.get(1), allPoints.get(2));
-        picture.addEdge(allPoints.get(2), allPoints.get(3));
-        picture.addEdge(allPoints.get(3), allPoints.get(0));
+        allPoints.add(new Point(0, 0, -30));
+        allPoints.add(new Point(0, 200, -30));
+        allPoints.add(new Point(40, 200, -30));
+        allPoints.add(new Point(100, 100, -30));
+        allPoints.add(new Point(160, 200, -30));
+        allPoints.add(new Point(200, 200, -30));
+        allPoints.add(new Point(200, 0, -30));
+        allPoints.add(new Point(180, 0, -30));
+        allPoints.add(new Point(180, 180, -30));
+        allPoints.add(new Point(160, 180, -30));
+        allPoints.add(new Point(110, 80, -30));
+        allPoints.add(new Point(90, 80, -30));
+        allPoints.add(new Point(40, 180, -30));
+        allPoints.add(new Point(20, 180, -30));
+        allPoints.add(new Point(20, 0, -30));
 
-        picture.addEdge(allPoints.get(4), allPoints.get(5));
-        picture.addEdge(allPoints.get(5), allPoints.get(6));
-        picture.addEdge(allPoints.get(6), allPoints.get(7));
-        picture.addEdge(allPoints.get(7), allPoints.get(4));
-
-        picture.addEdge(allPoints.get(0), allPoints.get(4));
-        picture.addEdge(allPoints.get(1), allPoints.get(5));
-        picture.addEdge(allPoints.get(2), allPoints.get(6));
-        picture.addEdge(allPoints.get(3), allPoints.get(7));
 
 
+        for (int i = 0; i < 14; i++) {
+            picture.addEdge(allPoints.get(i), allPoints.get(i + 1));
+            picture.addEdge(allPoints.get(i + 15), allPoints.get(i + 1 + 15));
+            picture.addEdge(allPoints.get(i), allPoints.get(i + 15));
+        }
+        picture.addEdge(allPoints.get(0), allPoints.get(14));
+        picture.addEdge(allPoints.get(15), allPoints.get(29));
+        picture.addEdge(allPoints.get(14), allPoints.get(29));
     }
 
     //вывод изображения
@@ -192,6 +229,15 @@ public class Main extends Canvas implements Runnable {
             setQPressed(false);
             setWPressed(false);
             setEPressed(false);
+        }
+    }
+
+    private void waiting() {
+        long lastTime = System.currentTimeMillis();
+        long delta;
+        delta = System.currentTimeMillis() - lastTime;
+        while (delta <= delay) {
+            delta = System.currentTimeMillis() - lastTime;
         }
     }
 

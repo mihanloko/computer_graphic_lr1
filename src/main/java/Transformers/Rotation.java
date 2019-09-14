@@ -14,7 +14,7 @@ public class Rotation implements Transformer {
                 {0, 1, 0, 0},
                 {0, 0, 1, 0},
                 {0, 0, 0, 1}
-        };;
+        };
         switch (direction) {
             case OXPlus:
                 matrix[1][1] = Math.cos(alpha);

@@ -2,7 +2,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 
-//todo решить какие клавиши использовать и реализовать
 public class KeyInputHandler extends KeyAdapter {
     private final int A = 65;
     private final int S = 83;
@@ -14,6 +13,7 @@ public class KeyInputHandler extends KeyAdapter {
     private final int TWO = 50;
     private final int THREE = 51;
     private final int FOUR = 52;
+    private final int FIVE = 53;
     private final Main main;
 
     public KeyInputHandler(Main main) {
@@ -54,6 +54,9 @@ public class KeyInputHandler extends KeyAdapter {
                 break;
             case FOUR:
                 main.setMod(Mods.Reflection.getNum());
+                break;
+            case FIVE:
+                main.setMod(Mods.Custom.getNum());
                 break;
         }
     }

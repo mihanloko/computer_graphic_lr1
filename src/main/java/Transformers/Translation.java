@@ -14,7 +14,7 @@ public class Translation implements Transformer {
                 {0, 1, 0, 0},
                 {0, 0, 1, 0},
                 {0, 0, 0, 1}
-        };;
+        };
         switch (direction) {
             case OXPlus:
                 matrix[3][0] = delta;
@@ -35,6 +35,19 @@ public class Translation implements Transformer {
                 matrix[3][2] = -delta;
                 break;
         }
+
+        for (Point point: points) {
+            point.changeCoordinates(matrix);
+        }
+    }
+
+    void customTranslation(LinkedList<Point> points, int x, int y) {
+        double[][] matrix = {
+                {1, 0, 0 , 0},
+                {0, 1, 0, 0},
+                {0, 0, 1, 0},
+                {x, y, 0, 1}
+        };
 
         for (Point point: points) {
             point.changeCoordinates(matrix);
