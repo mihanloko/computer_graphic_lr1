@@ -16,8 +16,8 @@ public class Main extends Canvas implements Runnable {
 
     //вещи для потока
     private boolean running;
-    private static final int SCREEN_WIDTH = 800;
-    private static final int SCREEN_HEIGHT = 600;
+    private static final int SCREEN_WIDTH = 1000;
+    private static final int SCREEN_HEIGHT = 700;
 
     private Transformer currentTransformer;
 
@@ -32,6 +32,9 @@ public class Main extends Canvas implements Runnable {
     private boolean isQPressed = false;
     private boolean isWPressed = false;
     private boolean isEPressed = false;
+
+    private Edge OX, OY, OZ;
+    private int lengthOfAxis = 400;
 
     private final int delay = 20;
 
@@ -68,7 +71,11 @@ public class Main extends Canvas implements Runnable {
         mods.add(new Dilation());
         mods.add(new Rotation());
         mods.add(new Reflection());
-        currentTransformer = mods.get(0);
+        currentTransformer = mods.get(Mods.Translation.getNum());
+
+        OX = new Edge(new Point(0, 0, 0), new Point(lengthOfAxis, 0, 0));
+        OY = new Edge(new Point(0, 0, 0), new Point(0, lengthOfAxis, 0));
+        OZ = new Edge(new Point(0, 0, 0), new Point(0, 0, lengthOfAxis));
 
         addKeyListener(new KeyInputHandler(this));
 
@@ -123,6 +130,11 @@ public class Main extends Canvas implements Runnable {
             drawEdge(projection.projectionOfEdge(edge), g2d);
         }
 
+        g2d.setStroke(new BasicStroke(2, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        drawEdge(OX, g2d);
+        drawEdge(OY, g2d);
+        drawEdge(projection.projectionOfEdge(OZ), g2d);
+
         g2d.dispose();
         g.dispose();
         bs.show();
@@ -150,7 +162,37 @@ public class Main extends Canvas implements Runnable {
 
     //обновление дистанции и ускорения
     private void update() {
+        if (isAPressed) {
+            currentTransformer.transform(allPoints, Directions.OXMinus);
+        }
+        if (isSPressed) {
+            currentTransformer.transform(allPoints, Directions.OYMinus);
+        }
+        if (isDPressed) {
+            currentTransformer.transform(allPoints, Directions.OXPlus);
 
+        }
+        if (isQPressed) {
+            currentTransformer.transform(allPoints, Directions.OZMinus);
+
+        }
+        if (isWPressed) {
+            currentTransformer.transform(allPoints, Directions.OYPlus);
+
+        }
+        if (isEPressed) {
+            currentTransformer.transform(allPoints, Directions.OZPlus);
+
+        }
+
+        if (currentTransformer instanceof Reflection) {
+            setAPressed(false);
+            setSPressed(false);
+            setDPressed(false);
+            setQPressed(false);
+            setWPressed(false);
+            setEPressed(false);
+        }
     }
 
     public void setMod(int mod) {

@@ -25,6 +25,11 @@ public class Point {
         return new Point(result[0], result[1], result[2]);
     }
 
+    public void changeCoordinates(double[][] matrix) {
+        Point result = this.multiply(matrix);
+        this.coordinates = result.getCoordinates();
+    }
+
     public double[] getCoordinates() {
         return coordinates;
     }

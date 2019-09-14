@@ -1,7 +1,7 @@
 public enum Mods {
-    Rotation(0),
-    Translation(1),
-    Dilation(2),
+    Translation(0),
+    Dilation(1),
+    Rotation(2),
     Reflection(3);
 
     private int num;

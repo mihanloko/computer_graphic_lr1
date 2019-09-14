@@ -2,32 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c7f8e94-e6c0-479e-8371-cacfe8e6246c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Dilation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Reflection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Rotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Transformer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Translation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transformers/Directions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lr1.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/KeyInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KeyInputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Mods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Transformer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/todolist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Edge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KeyInputHandler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Picture/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Picture/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Picture/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Dilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Dilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Reflection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Reflection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Rotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Rotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Transformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Transformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Transformers/Translation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transformers/Translation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/KeyInputHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/KeyInputHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/lr1.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Mods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Mods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Picture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Projection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Transformer.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -59,6 +49,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,6 +58,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -114,6 +106,7 @@
       <workItem from="1568383128373" duration="1565000" />
       <workItem from="1568427313791" duration="1681000" />
       <workItem from="1568438641763" duration="2111000" />
+      <workItem from="1568452773807" duration="4117000" />
     </task>
     <servers />
   </component>

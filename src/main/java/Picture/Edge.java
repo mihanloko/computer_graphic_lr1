@@ -6,7 +6,6 @@ public class Edge {
     public Edge(Point a, Point b) {
         this.a = a;
         this.b = b;
-//        System.out.println(a + " " + b);
     }
 
     public Point getA() {

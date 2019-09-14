@@ -24,7 +24,6 @@ public class KeyInputHandler extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         super.keyPressed(e);
         int keyCode = e.getKeyCode();
-        System.out.println(keyCode + " " + e.getKeyChar());
         switch (keyCode) {
             case A:
                 main.setAPressed(true);
