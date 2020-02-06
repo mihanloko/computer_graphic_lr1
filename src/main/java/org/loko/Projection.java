@@ -1,4 +1,4 @@
-package org.loko.Transformers;
+package org.loko;
 
 import org.loko.Picture.Edge;
 
