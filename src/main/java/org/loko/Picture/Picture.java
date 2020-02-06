@@ -1,4 +1,4 @@
-package Picture;
+package org.loko.Picture;
 
 import java.util.LinkedList;
 
@@ -9,7 +9,7 @@ public class Picture {
         edges.add(edge);
     }
 
-    public void addEdge(Point a, Point b) {
+    public void addEdge(MyPoint a, MyPoint b) {
         edges.add(new Edge(a, b));
     }
 

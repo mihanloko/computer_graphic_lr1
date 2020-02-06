@@ -1,4 +1,6 @@
-import Picture.Edge;
+package org.loko.Transformers;
+
+import org.loko.Picture.Edge;
 
 public class Projection {
     private double f = 0.5;

@@ -1,3 +1,5 @@
+package org.loko;
+
 public enum Mods {
     Translation(0),
     Dilation(1),

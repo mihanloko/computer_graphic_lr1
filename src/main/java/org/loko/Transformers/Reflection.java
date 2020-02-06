@@ -1,12 +1,13 @@
-package Transformers;
+package org.loko.Transformers;
 
-import Picture.Point;
+import org.loko.Directions;
+import org.loko.Picture.MyPoint;
 
 import java.util.LinkedList;
 
 public class Reflection implements Transformer {
     @Override
-    public void transform(LinkedList<Point> points, Directions direction) {
+    public void transform(LinkedList<MyPoint> myPoints, Directions direction) {
         double[][] matrix = {
                 {1, 0, 0 , 0},
                 {0, 1, 0, 0},
@@ -28,8 +29,8 @@ public class Reflection implements Transformer {
                 break;
         }
 
-        for (Point point: points) {
-            point.changeCoordinates(matrix);
+        for (MyPoint myPoint : myPoints) {
+            myPoint.changeCoordinates(matrix);
         }
     }
 }

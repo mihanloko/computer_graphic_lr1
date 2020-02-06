@@ -1,4 +1,4 @@
-package Transformers;
+package org.loko;
 
 public enum Directions {
     OXPlus,

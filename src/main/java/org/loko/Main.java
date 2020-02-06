@@ -1,8 +1,9 @@
-import Picture.Edge;
-import Picture.Picture;
-import Picture.Point;
+package org.loko;
 
-import Transformers.*;
+import org.loko.Picture.Edge;
+import org.loko.Picture.Picture;
+import org.loko.Picture.MyPoint;
+import org.loko.Transformers.*;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -22,7 +23,7 @@ public class Main extends Canvas implements Runnable {
     private Transformer currentTransformer;
 
     //переменные
-    private LinkedList<Point> allPoints = new LinkedList<>();
+    private LinkedList<MyPoint> allMyPoints = new LinkedList<>();
     private Picture picture = new Picture();
     private Projection projection = new Projection();
     private ArrayList<Transformer> mods;
@@ -62,13 +63,13 @@ public class Main extends Canvas implements Runnable {
 
                     ((Custom) currentTransformer).setup(factor, x, y);
                     for (int i = 0; i < 10; i++) {
-                        currentTransformer.transform(allPoints, Directions.OZPlus);
+                        currentTransformer.transform(allMyPoints, Directions.OZPlus);
                         render();
                         waiting();
                     }
                     ((Custom) currentTransformer).setup(1.0 / factor, x, y);
                     for (int i = 0; i < 10; i++) {
-                        currentTransformer.transform(allPoints, Directions.OZPlus);
+                        currentTransformer.transform(allMyPoints, Directions.OZPlus);
                         render();
                         waiting();
                     }
@@ -93,55 +94,55 @@ public class Main extends Canvas implements Runnable {
         mods.add(new Custom());
         currentTransformer = mods.get(Mods.Translation.getNum());
 
-        OX = new Edge(new Point(0, 0, 0), new Point(lengthOfAxis, 0, 0));
-        OY = new Edge(new Point(0, 0, 0), new Point(0, lengthOfAxis, 0));
-        OZ = new Edge(new Point(0, 0, 0), new Point(0, 0, lengthOfAxis));
+        OX = new Edge(new MyPoint(0, 0, 0), new MyPoint(lengthOfAxis, 0, 0));
+        OY = new Edge(new MyPoint(0, 0, 0), new MyPoint(0, lengthOfAxis, 0));
+        OZ = new Edge(new MyPoint(0, 0, 0), new MyPoint(0, 0, lengthOfAxis));
 
         addKeyListener(new KeyInputHandler(this));
 
 
-        allPoints.add(new Point(0, 0, 0));
-        allPoints.add(new Point(0, 200, 0));
-        allPoints.add(new Point(40, 200, 0));
-        allPoints.add(new Point(100, 100, 0));
-        allPoints.add(new Point(160, 200, 0));
-        allPoints.add(new Point(200, 200, 0));
-        allPoints.add(new Point(200, 0, 0));
-        allPoints.add(new Point(180, 0, 0));
-        allPoints.add(new Point(180, 180, 0));
-        allPoints.add(new Point(160, 180, 0));
-        allPoints.add(new Point(110, 80, 0));
-        allPoints.add(new Point(90, 80, 0));
-        allPoints.add(new Point(40, 180, 0));
-        allPoints.add(new Point(20, 180, 0));
-        allPoints.add(new Point(20, 0, 0));
+        allMyPoints.add(new MyPoint(0, 0, 0));
+        allMyPoints.add(new MyPoint(0, 200, 0));
+        allMyPoints.add(new MyPoint(40, 200, 0));
+        allMyPoints.add(new MyPoint(100, 100, 0));
+        allMyPoints.add(new MyPoint(160, 200, 0));
+        allMyPoints.add(new MyPoint(200, 200, 0));
+        allMyPoints.add(new MyPoint(200, 0, 0));
+        allMyPoints.add(new MyPoint(180, 0, 0));
+        allMyPoints.add(new MyPoint(180, 180, 0));
+        allMyPoints.add(new MyPoint(160, 180, 0));
+        allMyPoints.add(new MyPoint(110, 80, 0));
+        allMyPoints.add(new MyPoint(90, 80, 0));
+        allMyPoints.add(new MyPoint(40, 180, 0));
+        allMyPoints.add(new MyPoint(20, 180, 0));
+        allMyPoints.add(new MyPoint(20, 0, 0));
 
-        allPoints.add(new Point(0, 0, -30));
-        allPoints.add(new Point(0, 200, -30));
-        allPoints.add(new Point(40, 200, -30));
-        allPoints.add(new Point(100, 100, -30));
-        allPoints.add(new Point(160, 200, -30));
-        allPoints.add(new Point(200, 200, -30));
-        allPoints.add(new Point(200, 0, -30));
-        allPoints.add(new Point(180, 0, -30));
-        allPoints.add(new Point(180, 180, -30));
-        allPoints.add(new Point(160, 180, -30));
-        allPoints.add(new Point(110, 80, -30));
-        allPoints.add(new Point(90, 80, -30));
-        allPoints.add(new Point(40, 180, -30));
-        allPoints.add(new Point(20, 180, -30));
-        allPoints.add(new Point(20, 0, -30));
+        allMyPoints.add(new MyPoint(0, 0, -30));
+        allMyPoints.add(new MyPoint(0, 200, -30));
+        allMyPoints.add(new MyPoint(40, 200, -30));
+        allMyPoints.add(new MyPoint(100, 100, -30));
+        allMyPoints.add(new MyPoint(160, 200, -30));
+        allMyPoints.add(new MyPoint(200, 200, -30));
+        allMyPoints.add(new MyPoint(200, 0, -30));
+        allMyPoints.add(new MyPoint(180, 0, -30));
+        allMyPoints.add(new MyPoint(180, 180, -30));
+        allMyPoints.add(new MyPoint(160, 180, -30));
+        allMyPoints.add(new MyPoint(110, 80, -30));
+        allMyPoints.add(new MyPoint(90, 80, -30));
+        allMyPoints.add(new MyPoint(40, 180, -30));
+        allMyPoints.add(new MyPoint(20, 180, -30));
+        allMyPoints.add(new MyPoint(20, 0, -30));
 
 
 
         for (int i = 0; i < 14; i++) {
-            picture.addEdge(allPoints.get(i), allPoints.get(i + 1));
-            picture.addEdge(allPoints.get(i + 15), allPoints.get(i + 1 + 15));
-            picture.addEdge(allPoints.get(i), allPoints.get(i + 15));
+            picture.addEdge(allMyPoints.get(i), allMyPoints.get(i + 1));
+            picture.addEdge(allMyPoints.get(i + 15), allMyPoints.get(i + 1 + 15));
+            picture.addEdge(allMyPoints.get(i), allMyPoints.get(i + 15));
         }
-        picture.addEdge(allPoints.get(0), allPoints.get(14));
-        picture.addEdge(allPoints.get(15), allPoints.get(29));
-        picture.addEdge(allPoints.get(14), allPoints.get(29));
+        picture.addEdge(allMyPoints.get(0), allMyPoints.get(14));
+        picture.addEdge(allMyPoints.get(15), allMyPoints.get(29));
+        picture.addEdge(allMyPoints.get(14), allMyPoints.get(29));
     }
 
     //вывод изображения
@@ -200,25 +201,25 @@ public class Main extends Canvas implements Runnable {
     //обновление дистанции и ускорения
     private void update() {
         if (isAPressed) {
-            currentTransformer.transform(allPoints, Directions.OXMinus);
+            currentTransformer.transform(allMyPoints, Directions.OXMinus);
         }
         if (isSPressed) {
-            currentTransformer.transform(allPoints, Directions.OYMinus);
+            currentTransformer.transform(allMyPoints, Directions.OYMinus);
         }
         if (isDPressed) {
-            currentTransformer.transform(allPoints, Directions.OXPlus);
+            currentTransformer.transform(allMyPoints, Directions.OXPlus);
 
         }
         if (isQPressed) {
-            currentTransformer.transform(allPoints, Directions.OZMinus);
+            currentTransformer.transform(allMyPoints, Directions.OZMinus);
 
         }
         if (isWPressed) {
-            currentTransformer.transform(allPoints, Directions.OYPlus);
+            currentTransformer.transform(allMyPoints, Directions.OYPlus);
 
         }
         if (isEPressed) {
-            currentTransformer.transform(allPoints, Directions.OZPlus);
+            currentTransformer.transform(allMyPoints, Directions.OZPlus);
 
         }
 

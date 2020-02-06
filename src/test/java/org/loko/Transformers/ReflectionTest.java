@@ -1,18 +1,18 @@
-package Transformers;
+package org.loko.Transformers;
 
-import Picture.Point;
+import org.loko.Directions;
+import org.loko.Picture.MyPoint;
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
-import org.apache.commons.math3.linear.MatrixUtils;
 import org.apache.commons.math3.linear.RealMatrix;
+
 import org.junit.jupiter.api.Test;
-
-
-import java.util.LinkedList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ReflectionTest {
+import java.util.LinkedList;
+
+
+public class ReflectionTest {
 
     @Test
     public void transform() {
@@ -23,16 +23,16 @@ class ReflectionTest {
                 {0, 0, 0, 1}
         };
         Reflection reflection = new Reflection();
-        Point point = new Point(1, 2, 3);
-        LinkedList<Point> points = new LinkedList<>();
-        points.add(point);
-        reflection.transform(points, Directions.OXPlus);
+        MyPoint myPoint = new MyPoint(1, 2, 3);
+        LinkedList<MyPoint> myPoints = new LinkedList<>();
+        myPoints.add(myPoint);
+        reflection.transform(myPoints, Directions.OXPlus);
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
         RealMatrix result = transformMatrix.multiply(pointMatrix);
         double delta = 0;
         double eps = 0.0001;
-        double[] coordinates = point.getCoordinates();
+        double[] coordinates = myPoint.getCoordinates();
         for (int i = 0; i < 4; i++) {
             delta += Math.abs(coordinates[i] - result.getEntry(i, 0));
         }
