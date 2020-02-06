@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ReflectionTest {
 
     @Test
-    void transform() {
+    public void transform() {
         double[][] matrix = {
                 {-1, 0, 0 , 0},
                 {0, 1, 0, 0},
