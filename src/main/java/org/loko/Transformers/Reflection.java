@@ -5,7 +5,7 @@ import org.loko.Picture.MyPoint;
 
 import java.util.LinkedList;
 
-public class Reflection implements Transformer {
+public class Reflection implements Multiplier {
     @Override
     public void transform(LinkedList<MyPoint> myPoints, Directions direction) {
         double[][] matrix = {

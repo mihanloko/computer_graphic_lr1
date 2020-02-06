@@ -5,7 +5,7 @@ import org.loko.Picture.MyPoint;
 
 import java.util.LinkedList;
 
-public class Translation implements Transformer {
+public class Translation implements Multiplier {
     private static final int delta = 5;
 
     @Override

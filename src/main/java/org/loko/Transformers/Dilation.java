@@ -2,11 +2,10 @@ package org.loko.Transformers;
 
 import org.loko.Directions;
 import org.loko.Picture.MyPoint;
-import org.loko.Transformers.Transformer;
 
 import java.util.LinkedList;
 
-public class Dilation implements Transformer {
+public class Dilation implements Multiplier {
     private static final double factorPlus = 1.05;
     private static final double factorMinus = 1.0 / factorPlus;
 

@@ -5,7 +5,7 @@ import org.loko.Picture.MyPoint;
 
 import java.util.LinkedList;
 
-public class Rotation implements Transformer {
+public class Rotation implements Multiplier {
     private static final double alpha = 0.0872665;
 
     @Override

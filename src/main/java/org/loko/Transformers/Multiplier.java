@@ -5,6 +5,6 @@ import org.loko.Picture.*;
 
 import java.util.LinkedList;
 
-public interface Transformer {
+public interface Multiplier {
     void transform(LinkedList<MyPoint> myPoints, Directions direction);
 }

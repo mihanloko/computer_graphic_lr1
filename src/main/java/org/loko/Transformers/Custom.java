@@ -5,7 +5,7 @@ import org.loko.Picture.MyPoint;
 
 import java.util.LinkedList;
 
-public class Custom implements Transformer {
+public class Custom implements Multiplier {
     private double factor;
     private int x;
     private int y;
