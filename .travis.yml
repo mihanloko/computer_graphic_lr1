@@ -1,0 +1,9 @@
+language: java
+addons:
+  sonarcloud:
+    organization: mihanloko
+    token:
+      secure: Ej3R5+MXDvVOg4YCJiwHwtQen1KIzn7uk3FA/wJkEGIgoNu1DJxXvc/t0ZKgxVBx3N+WuEvWJ497tQQscSYXgCKcqa5tz6CPOdJ75jgj7fJlS4698aTl/Iw5pOKX3S1ihQwJAdk1Lz0dWrLGaVcJqIsm1ZrBXQAIs7sVDcxp18YQL+Ev7VZTxujPdWVISwSKIXXQ/t1zc9AJ4puPJ1XpdzCq8vXCTiqdSOu1hk8/6WB8H5bnfU3xWfi8coSNM025jgQW5cyUScgXZ6XChjLJw4PRlsHqJnRaGstZEj2jQwgxz6IZ7m4zLLXghmzWyTsgWuvWq8/6mHB5m8hR1tKXNAiEmvVFWgYwUh+mVek8WzO1QZ1MvRwRIVsTeNFL359+nFSK/38XbVe3MsJcNRh98UhhoMo/Xlo89oWRy5OPhhIbcheWqLhANcH2onMEgUoQz4CSnA5frsdgthu7VXQDTSPXgTjUFB1EsD1jmS3N48u/6HJ4MNAiWgdUrWjYmrKz+KOKlf0UYD2GmUoHzgudwTt1LGpRJR7zU4kZQL3NRrHgOR2HYQbKBQzDrLaVG17LrDWdyaHuckwUn8WWwErDTfKbRpJA324GkcoxteGsZkPHQvALNpXNYPt65YnUYetazTMhj8gOKp8i1TU4j16Cuhldp3VD+p4XVpZYm56TNlg=
+script:
+  - mvn clean package org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+    -Dsonar.projectKey=mihanloko_computer_graphic_lr1
