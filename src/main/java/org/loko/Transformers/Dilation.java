@@ -1,5 +1,6 @@
-package org.loko;
+package org.loko.Transformers;
 
+import org.loko.Directions;
 import org.loko.Picture.MyPoint;
 import org.loko.Transformers.Transformer;
 

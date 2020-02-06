@@ -1,6 +1,5 @@
 package org.loko.Transformers;
 
-import org.loko.Dilation;
 import org.loko.Directions;
 import org.loko.Picture.MyPoint;
 
