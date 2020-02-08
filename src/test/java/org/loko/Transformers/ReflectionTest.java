@@ -37,6 +37,7 @@ public class ReflectionTest {
             delta += Math.abs(coordinates[i] - result.getEntry(i, 0));
         }
         assertTrue(delta < eps);
+
         /*RealMatrix matrix1 = new Array2DRowRealMatrix(new double[][]{{1, 1, 1}, {1, 1, 1}, {1, 1, 1}});
         RealMatrix matrix2 = new Array2DRowRealMatrix(new double[][]{{1, 1, 1}, {1, 1, 1}, {1, 1, 1}});
         RealMatrix result = matrix1.multiply(matrix2);
