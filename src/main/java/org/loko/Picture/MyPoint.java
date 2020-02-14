@@ -1,7 +1,5 @@
 package org.loko.Picture;
 
-import java.util.Arrays;
-
 public class MyPoint {
     private double[] coordinates = new double[4];
     public MyPoint(double x, double y, double z, double h) {

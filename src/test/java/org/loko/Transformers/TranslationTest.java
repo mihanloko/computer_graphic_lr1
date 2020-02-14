@@ -42,5 +42,28 @@ class TranslationTest {
 
     @Test
     void customTranslation() {
+        int x = 2, y = 6;
+        double[][] matrix = {
+                {1, 0, 0 , 0},
+                {0, 1, 0, 0},
+                {0, 0, 1, 0},
+                {x, y, 0, 1}
+        };
+
+        Translation translation = new Translation();
+        MyPoint myPoint = new MyPoint(1, 2, 3);
+        LinkedList<MyPoint> myPoints = new LinkedList<>();
+        myPoints.add(myPoint);
+        translation.customTranslation(myPoints, x, y);
+        RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
+        RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
+        RealMatrix result = transformMatrix.multiply(pointMatrix);
+        double d = 0;
+        double eps = 0.0001;
+        double[] coordinates = myPoint.getCoordinates();
+        for (int i = 0; i < 3; i++) {// при этом преобразовании вроде последняя координата не нужна. или во всех
+            d += Math.abs(coordinates[i] - result.getEntry(i, 0));
+        }
+        assertTrue(d < eps);
     }
 }
