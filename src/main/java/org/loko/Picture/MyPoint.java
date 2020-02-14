@@ -19,7 +19,7 @@ public class MyPoint {
         for (int i = 0; i < 4; i++) {
             result[i] = 0;
             for (int j = 0; j < 4; j++) {
-                result[i] += coordinates[j] * matrix[j][i];
+                result[i] += coordinates[j] * matrix[i][j];
             }
         }
         return new MyPoint(result[0], result[1], result[2]);
@@ -34,11 +34,4 @@ public class MyPoint {
         return coordinates;
     }
 
-
-    @Override
-    public String toString() {
-        return "org.loko.Picture.Point{" +
-                "coordinates=" + Arrays.toString(coordinates) +
-                '}';
-    }
 }

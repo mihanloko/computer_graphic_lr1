@@ -36,11 +36,11 @@ class ProjectionTest {
 
         double delta = 0;
         double eps = 0.0001;
-        double[] coordinates = myPoint1.getCoordinates();
+        double[] coordinates = result.getA().getCoordinates();
         for (int i = 0; i < 4; i++) {
             delta += Math.abs(coordinates[i] - resultMatrix1.getEntry(i, 0));
         }
-        coordinates = myPoint2.getCoordinates();
+        coordinates = result.getB().getCoordinates();
         for (int i = 0; i < 4; i++) {
             delta += Math.abs(coordinates[i] - resultMatrix2.getEntry(i, 0));
         }
