@@ -6,7 +6,7 @@ import org.loko.Picture.MyPoint;
 import java.util.LinkedList;
 
 public class Rotation implements Multiplier {
-    private static final double alpha = 0.0872665;
+    private static final double ALPHA = 0.0872665;
 
     @Override
     public void transform(LinkedList<MyPoint> myPoints, Directions direction) {
@@ -17,41 +17,41 @@ public class Rotation implements Multiplier {
                 {0, 0, 0, 1}
         };
         switch (direction) {
-            case OXPlus:
-                matrix[1][1] = Math.cos(alpha);
-                matrix[1][2] = Math.sin(alpha);
-                matrix[2][1] = -Math.sin(alpha);
-                matrix[2][2] = Math.cos(alpha);
+            case OX_PLUS:
+                matrix[1][1] = Math.cos(ALPHA);
+                matrix[1][2] = Math.sin(ALPHA);
+                matrix[2][1] = -Math.sin(ALPHA);
+                matrix[2][2] = Math.cos(ALPHA);
                 break;
-            case OYPlus:
-                matrix[0][0] = Math.cos(alpha);
-                matrix[0][2] = -Math.sin(alpha);
-                matrix[2][0] = Math.sin(alpha);
-                matrix[2][2] = Math.cos(alpha);
+            case OY_PLUS:
+                matrix[0][0] = Math.cos(ALPHA);
+                matrix[0][2] = -Math.sin(ALPHA);
+                matrix[2][0] = Math.sin(ALPHA);
+                matrix[2][2] = Math.cos(ALPHA);
                 break;
-            case OZPlus:
-                matrix[0][0] = Math.cos(alpha);
-                matrix[0][1] = Math.sin(alpha);
-                matrix[1][0] = -Math.sin(alpha);
-                matrix[1][1] = Math.cos(alpha);
+            case OZ_PLUS:
+                matrix[0][0] = Math.cos(ALPHA);
+                matrix[0][1] = Math.sin(ALPHA);
+                matrix[1][0] = -Math.sin(ALPHA);
+                matrix[1][1] = Math.cos(ALPHA);
                 break;
-            case OXMinus:
-                matrix[1][1] = Math.cos(-alpha);
-                matrix[1][2] = Math.sin(-alpha);
-                matrix[2][1] = -Math.sin(-alpha);
-                matrix[2][2] = Math.cos(-alpha);
+            case OX_MINUS:
+                matrix[1][1] = Math.cos(-ALPHA);
+                matrix[1][2] = Math.sin(-ALPHA);
+                matrix[2][1] = -Math.sin(-ALPHA);
+                matrix[2][2] = Math.cos(-ALPHA);
                 break;
-            case OYMinus:
-                matrix[0][0] = Math.cos(-alpha);
-                matrix[0][2] = -Math.sin(-alpha);
-                matrix[2][0] = Math.sin(-alpha);
-                matrix[2][2] = Math.cos(-alpha);
+            case OY_MINUS:
+                matrix[0][0] = Math.cos(-ALPHA);
+                matrix[0][2] = -Math.sin(-ALPHA);
+                matrix[2][0] = Math.sin(-ALPHA);
+                matrix[2][2] = Math.cos(-ALPHA);
                 break;
-            case OZMinus:
-                matrix[0][0] = Math.cos(-alpha);
-                matrix[0][1] = Math.sin(-alpha);
-                matrix[1][0] = -Math.sin(-alpha);
-                matrix[1][1] = Math.cos(-alpha);
+            case OZ_MINUS:
+                matrix[0][0] = Math.cos(-ALPHA);
+                matrix[0][1] = Math.sin(-ALPHA);
+                matrix[1][0] = -Math.sin(-ALPHA);
+                matrix[1][1] = Math.cos(-ALPHA);
                 break;
         }
 

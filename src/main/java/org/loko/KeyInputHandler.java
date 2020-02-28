@@ -46,20 +46,21 @@ public class KeyInputHandler extends KeyAdapter {
                 main.setEPressed(true);
                 break;
             case ONE:
-                main.setMod(Mods.Translation.getNum());
+                main.setMod(Mods.TRANSLATION.getNum());
                 break;
             case TWO:
-                main.setMod(Mods.Dilation.getNum());
+                main.setMod(Mods.DILATION.getNum());
                 break;
             case THREE:
-                main.setMod(Mods.Rotation.getNum());
+                main.setMod(Mods.ROTATION.getNum());
                 break;
             case FOUR:
-                main.setMod(Mods.Reflection.getNum());
+                main.setMod(Mods.REFLECTION.getNum());
                 break;
             case FIVE:
-                main.setMod(Mods.Custom.getNum());
+                main.setMod(Mods.CUSTOM.getNum());
                 break;
+            default: break;
         }
     }
 
@@ -87,6 +88,7 @@ public class KeyInputHandler extends KeyAdapter {
             case E:
                 main.setEPressed(false);
                 break;
+            default: break;
         }
     }
 }

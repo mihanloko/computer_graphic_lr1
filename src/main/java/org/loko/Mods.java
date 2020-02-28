@@ -1,11 +1,11 @@
 package org.loko;
 
 public enum Mods {
-    Translation(0),
-    Dilation(1),
-    Rotation(2),
-    Reflection(3),
-    Custom(4);
+    TRANSLATION(0),
+    DILATION(1),
+    ROTATION(2),
+    REFLECTION(3),
+    CUSTOM(4);
 
     private int num;
 

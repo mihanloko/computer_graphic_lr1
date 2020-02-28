@@ -27,7 +27,7 @@ class DilationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        dilation.transform(myPoints, Directions.OXPlus);
+        dilation.transform(myPoints, Directions.OX_PLUS);
 
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
@@ -53,7 +53,7 @@ class DilationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        dilation.transform(myPoints, Directions.OXMinus);
+        dilation.transform(myPoints, Directions.OX_MINUS);
 
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
@@ -79,7 +79,7 @@ class DilationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        dilation.transform(myPoints, Directions.OYPlus);
+        dilation.transform(myPoints, Directions.OY_PLUS);
 
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
@@ -105,7 +105,7 @@ class DilationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        dilation.transform(myPoints, Directions.OYMinus);
+        dilation.transform(myPoints, Directions.OY_MINUS);
 
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
@@ -131,7 +131,7 @@ class DilationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        dilation.transform(myPoints, Directions.OZPlus);
+        dilation.transform(myPoints, Directions.OZ_PLUS);
 
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
@@ -157,7 +157,7 @@ class DilationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        dilation.transform(myPoints, Directions.OZMinus);
+        dilation.transform(myPoints, Directions.OZ_MINUS);
 
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});

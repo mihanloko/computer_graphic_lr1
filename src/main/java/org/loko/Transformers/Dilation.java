@@ -6,8 +6,8 @@ import org.loko.Picture.MyPoint;
 import java.util.LinkedList;
 
 public class Dilation implements Multiplier {
-    private static final double factorPlus = 1.05;
-    private static final double factorMinus = 1.0 / factorPlus;
+    private static final double FACTOR_PLUS = 1.05;
+    private static final double FACTOR_MINUS = 1.0 / FACTOR_PLUS;
 
     @Override
     public void transform(LinkedList<MyPoint> myPoints, Directions direction) {
@@ -18,23 +18,23 @@ public class Dilation implements Multiplier {
                 {0, 0, 0, 1}
         };
         switch (direction) {
-            case OXPlus:
-                matrix[0][0] = factorPlus;
+            case OX_PLUS:
+                matrix[0][0] = FACTOR_PLUS;
                 break;
-            case OYPlus:
-                matrix[1][1] = factorPlus;
+            case OY_PLUS:
+                matrix[1][1] = FACTOR_PLUS;
                 break;
-            case OZPlus:
-                matrix[2][2] = factorPlus;
+            case OZ_PLUS:
+                matrix[2][2] = FACTOR_PLUS;
                 break;
-            case OXMinus:
-                matrix[0][0] = factorMinus;
+            case OX_MINUS:
+                matrix[0][0] = FACTOR_MINUS;
                 break;
-            case OYMinus:
-                matrix[1][1] = factorMinus;
+            case OY_MINUS:
+                matrix[1][1] = FACTOR_MINUS;
                 break;
-            case OZMinus:
-                matrix[2][2] = factorMinus;
+            case OZ_MINUS:
+                matrix[2][2] = FACTOR_MINUS;
                 break;
         }
 

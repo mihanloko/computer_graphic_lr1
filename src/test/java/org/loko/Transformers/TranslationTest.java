@@ -27,7 +27,7 @@ class TranslationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        reflection.transform(myPoints, Directions.OXPlus);
+        reflection.transform(myPoints, Directions.OX_PLUS);
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
         RealMatrix result = transformMatrix.multiply(pointMatrix);
@@ -54,7 +54,7 @@ class TranslationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        reflection.transform(myPoints, Directions.OXMinus);
+        reflection.transform(myPoints, Directions.OX_MINUS);
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
         RealMatrix result = transformMatrix.multiply(pointMatrix);
@@ -81,7 +81,7 @@ class TranslationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        reflection.transform(myPoints, Directions.OYPlus);
+        reflection.transform(myPoints, Directions.OY_PLUS);
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
         RealMatrix result = transformMatrix.multiply(pointMatrix);
@@ -108,7 +108,7 @@ class TranslationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        reflection.transform(myPoints, Directions.OYMinus);
+        reflection.transform(myPoints, Directions.OY_MINUS);
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
         RealMatrix result = transformMatrix.multiply(pointMatrix);
@@ -135,7 +135,7 @@ class TranslationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        reflection.transform(myPoints, Directions.OZPlus);
+        reflection.transform(myPoints, Directions.OZ_PLUS);
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
         RealMatrix result = transformMatrix.multiply(pointMatrix);
@@ -162,7 +162,7 @@ class TranslationTest {
         MyPoint myPoint = new MyPoint(1, 2, 3);
         LinkedList<MyPoint> myPoints = new LinkedList<>();
         myPoints.add(myPoint);
-        reflection.transform(myPoints, Directions.OZMinus);
+        reflection.transform(myPoints, Directions.OZ_MINUS);
         RealMatrix transformMatrix = new Array2DRowRealMatrix(matrix);
         RealMatrix pointMatrix = new Array2DRowRealMatrix(new double[][]{{1}, {2}, {3}, {1}});
         RealMatrix result = transformMatrix.multiply(pointMatrix);

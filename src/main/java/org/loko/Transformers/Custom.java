@@ -10,16 +10,16 @@ public class Custom implements Multiplier {
     private int x;
     private int y;
 
-    private static final Dilation dilation = new Dilation();
-    private static final Translation translation = new Translation();
+    private static final Dilation DILATION = new Dilation();
+    private static final Translation TRANSLATION = new Translation();
 
     @Override
     public void transform(LinkedList<MyPoint> myPoints, Directions direction) {
-        translation.customTranslation(myPoints, -x, -y);
+        TRANSLATION.customTranslation(myPoints, -x, -y);
 
-        dilation.customDilation(myPoints, factor);
+        DILATION.customDilation(myPoints, factor);
 
-        translation.customTranslation(myPoints, x, y);
+        TRANSLATION.customTranslation(myPoints, x, y);
     }
 
     public void setup(double factor, int x, int y) {

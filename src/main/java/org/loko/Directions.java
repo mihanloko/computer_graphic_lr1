@@ -1,10 +1,10 @@
 package org.loko;
 
 public enum Directions {
-    OXPlus,
-    OXMinus,
-    OYPlus,
-    OYMinus,
-    OZPlus,
-    OZMinus;
+    OX_PLUS,
+    OX_MINUS,
+    OY_PLUS,
+    OY_MINUS,
+    OZ_PLUS,
+    OZ_MINUS;
 }

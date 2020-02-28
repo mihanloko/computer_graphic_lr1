@@ -15,16 +15,16 @@ public class Reflection implements Multiplier {
                 {0, 0, 0, 1}
         };
         switch (direction) {
-            case OXPlus:
-            case OXMinus:
+            case OX_PLUS:
+            case OX_MINUS:
                 matrix[0][0] = -1;
                 break;
-            case OYPlus:
-            case OYMinus:
+            case OY_PLUS:
+            case OY_MINUS:
                 matrix[1][1] = -1;
                 break;
-            case OZPlus:
-            case OZMinus:
+            case OZ_PLUS:
+            case OZ_MINUS:
                 matrix[2][2] = -1;
                 break;
         }

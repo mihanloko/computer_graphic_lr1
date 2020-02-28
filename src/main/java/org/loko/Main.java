@@ -38,7 +38,7 @@ public class Main extends Canvas implements Runnable {
     private int lengthOfAxis = 400;
 
     private final int delay = 20;
-    private int x = 100, y = 100;
+    private int deltaX = 100, deltaY = 100;
     private double factor = 1.05;
 
 
@@ -54,26 +54,25 @@ public class Main extends Canvas implements Runnable {
         long delta;
         init();
         //рендер
-//        render();
 
         while (running) {
             delta = System.currentTimeMillis() - lastTime;
             if (delta >= delay) {
                 if (currentMultiplier instanceof Custom) {
 
-                    ((Custom) currentMultiplier).setup(factor, x, y);
+                    ((Custom) currentMultiplier).setup(factor, deltaX, deltaY);
                     for (int i = 0; i < 10; i++) {
-                        currentMultiplier.transform(allMyPoints, Directions.OZPlus);
+                        currentMultiplier.transform(allMyPoints, Directions.OZ_PLUS);
                         render();
                         waiting();
                     }
-                    ((Custom) currentMultiplier).setup(1.0 / factor, x, y);
+                    ((Custom) currentMultiplier).setup(1.0 / factor, deltaX, deltaY);
                     for (int i = 0; i < 10; i++) {
-                        currentMultiplier.transform(allMyPoints, Directions.OZPlus);
+                        currentMultiplier.transform(allMyPoints, Directions.OZ_PLUS);
                         render();
                         waiting();
                     }
-                    currentMultiplier = mods.get(Mods.Translation.getNum());
+                    currentMultiplier = mods.get(Mods.TRANSLATION.getNum());
                 }
                 else {
                     lastTime = System.currentTimeMillis();
@@ -92,7 +91,7 @@ public class Main extends Canvas implements Runnable {
         mods.add(new Rotation());
         mods.add(new Reflection());
         mods.add(new Custom());
-        currentMultiplier = mods.get(Mods.Translation.getNum());
+        currentMultiplier = mods.get(Mods.TRANSLATION.getNum());
 
         OX = new Edge(new MyPoint(0, 0, 0), new MyPoint(lengthOfAxis, 0, 0));
         OY = new Edge(new MyPoint(0, 0, 0), new MyPoint(0, lengthOfAxis, 0));
@@ -153,7 +152,6 @@ public class Main extends Canvas implements Runnable {
             requestFocus();
             bs = getBufferStrategy();
         }
-        //bs = getBufferStrategy();
         Graphics g = bs.getDrawGraphics();
 
         g.setColor(Color.WHITE);
@@ -186,11 +184,7 @@ public class Main extends Canvas implements Runnable {
                 by = (int) edge.getB().getCoordinates()[1];
         int middleX = getWidth() / 2;
         int middleY = getHeight() / 2;
-        /*System.out.println(
-                (middleX + ax) + " " +
-                        (middleY - ay) + " " +
-                        (middleX + bx) + " " +
-                        (middleY - by));*/
+
         graphics2D.drawLine(
                 middleX + ax,
                 middleY - ay,
@@ -201,25 +195,25 @@ public class Main extends Canvas implements Runnable {
     //обновление дистанции и ускорения
     private void update() {
         if (isAPressed) {
-            currentMultiplier.transform(allMyPoints, Directions.OXMinus);
+            currentMultiplier.transform(allMyPoints, Directions.OX_MINUS);
         }
         if (isSPressed) {
-            currentMultiplier.transform(allMyPoints, Directions.OYMinus);
+            currentMultiplier.transform(allMyPoints, Directions.OY_MINUS);
         }
         if (isDPressed) {
-            currentMultiplier.transform(allMyPoints, Directions.OXPlus);
+            currentMultiplier.transform(allMyPoints, Directions.OX_PLUS);
 
         }
         if (isQPressed) {
-            currentMultiplier.transform(allMyPoints, Directions.OZMinus);
+            currentMultiplier.transform(allMyPoints, Directions.OZ_MINUS);
 
         }
         if (isWPressed) {
-            currentMultiplier.transform(allMyPoints, Directions.OYPlus);
+            currentMultiplier.transform(allMyPoints, Directions.OY_PLUS);
 
         }
         if (isEPressed) {
-            currentMultiplier.transform(allMyPoints, Directions.OZPlus);
+            currentMultiplier.transform(allMyPoints, Directions.OZ_PLUS);
 
         }
 

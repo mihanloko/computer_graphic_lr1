@@ -6,7 +6,7 @@ import org.loko.Picture.MyPoint;
 import java.util.LinkedList;
 
 public class Translation implements Multiplier {
-    private static final int delta = 5;
+    private static final int DELTA = 5;
 
     @Override
     public void transform(LinkedList<MyPoint> myPoints, Directions direction) {
@@ -17,23 +17,23 @@ public class Translation implements Multiplier {
                 {0, 0, 0, 1}
         };
         switch (direction) {
-            case OXPlus:
-                matrix[3][0] = delta;
+            case OX_PLUS:
+                matrix[3][0] = DELTA;
                 break;
-            case OYPlus:
-                matrix[3][1] = delta;
+            case OY_PLUS:
+                matrix[3][1] = DELTA;
                 break;
-            case OZPlus:
-                matrix[3][2] = delta;
+            case OZ_PLUS:
+                matrix[3][2] = DELTA;
                 break;
-            case OXMinus:
-                matrix[3][0] = -delta;
+            case OX_MINUS:
+                matrix[3][0] = -DELTA;
                 break;
-            case OYMinus:
-                matrix[3][1] = -delta;
+            case OY_MINUS:
+                matrix[3][1] = -DELTA;
                 break;
-            case OZMinus:
-                matrix[3][2] = -delta;
+            case OZ_MINUS:
+                matrix[3][2] = -DELTA;
                 break;
         }
 
