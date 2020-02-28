@@ -20,13 +20,13 @@ public class Main extends Canvas implements Runnable {
     private static final int SCREEN_WIDTH = 1000;
     private static final int SCREEN_HEIGHT = 700;
 
-    private Multiplier currentMultiplier;
+    private transient Multiplier currentMultiplier;
 
     //переменные
-    private LinkedList<MyPoint> allMyPoints = new LinkedList<>();
-    private Picture picture = new Picture();
-    private Projection projection = new Projection();
-    private ArrayList<Multiplier> mods;
+    private transient LinkedList<MyPoint> allMyPoints = new LinkedList<>();
+    private transient Picture picture = new Picture();
+    private transient Projection projection = new Projection();
+    private transient ArrayList<Multiplier> mods;
     private boolean isAPressed = false;
     private boolean isSPressed = false;
     private boolean isDPressed = false;
@@ -34,7 +34,7 @@ public class Main extends Canvas implements Runnable {
     private boolean isWPressed = false;
     private boolean isEPressed = false;
 
-    private Edge OX, OY, OZ;
+    private transient Edge OX, OY, OZ;
     private int lengthOfAxis = 400;
 
     private final int delay = 20;
